@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$ARCH" = "x86_64" ]; then
+if [[ $(uname -m) == "x86_64" ]]; then
     FILE=galileo-toolchain-20150120-linux64.tar.bz2
 else
     FILE=galileo-toolchain-20150120-linux32.tar.bz2
@@ -8,7 +8,7 @@ fi
 
 echo "Arch: $ARCH"
 
-URL=https://downloadmirror.intel.com/24619/eng/${FILE}
+URL=https://web.archive.org/web/20220317182329if_/https://downloadmirror.intel.com/24619/eng/${FILE}
 DEST=${HOME}/.arduino15/packages/Intel/tools/i586-poky-linux-uclibc/1.6.2+1.0/
 
 wget -c ${URL}
